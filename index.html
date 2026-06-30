@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>狗头消消乐</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app" id="app">
+      <div class="soft-bg" aria-hidden="true"></div>
+
+      <main class="game">
+        <header class="top">
+          <div class="seal">狗头</div>
+          <h1>狗头消消乐</h1>
+          <div class="hud">
+            <div>
+              <span>倒计时</span>
+              <strong id="timeText">03:00</strong>
+            </div>
+            <div>
+              <span>分数</span>
+              <strong id="scoreText">0</strong>
+            </div>
+            <div>
+              <span>连击</span>
+              <strong id="comboText">x1</strong>
+            </div>
+          </div>
+        </header>
+
+        <div class="poem-toast" id="poemToast" aria-live="polite"></div>
+
+        <section class="board-panel">
+          <div class="board" id="board" aria-label="狗头消消乐棋盘"></div>
+          <div class="fx-layer" id="fxLayer" aria-hidden="true"></div>
+        </section>
+
+        <footer class="tools" aria-label="道具按钮">
+          <button class="tool-btn" type="button" data-tool="claw">
+            <span class="tool-icon">爪</span>
+            <span class="tool-name">诗爪</span>
+            <span class="tool-desc">清一整行</span>
+            <strong id="clawCount">2</strong>
+          </button>
+          <button class="tool-btn" type="button" data-tool="bone">
+            <span class="tool-icon">骨</span>
+            <span class="tool-name">诗骨</span>
+            <span class="tool-desc">清同款狗头</span>
+            <strong id="boneCount">1</strong>
+          </button>
+          <button class="tool-btn" type="button" data-tool="stamp">
+            <span class="tool-icon">印</span>
+            <span class="tool-name">狗头诗印</span>
+            <span class="tool-desc">清周围3x3</span>
+            <strong id="stampCount">1</strong>
+          </button>
+        </footer>
+      </main>
+
+      <section class="screen start-screen is-active" id="startScreen">
+        <div class="screen-box">
+          <div class="seal big">狗头</div>
+          <h2>狗头消消乐</h2>
+          <div class="dog-line" id="startDogs"></div>
+          <p class="quote" id="startQuote"></p>
+          <button class="primary-btn" id="startBtn" type="button">狗头大考开始</button>
+        </div>
+      </section>
+
+      <section class="screen result-screen" id="resultScreen">
+        <div class="screen-box">
+          <div class="seal big">诗成</div>
+          <h2>三分钟狗头大考结束</h2>
+          <div class="dog-line" id="resultDogs"></div>
+          <dl class="result-grid">
+            <div>
+              <dt>最终分数</dt>
+              <dd id="finalScore">0</dd>
+            </div>
+            <div>
+              <dt>最高连击</dt>
+              <dd id="finalCombo">0</dd>
+            </div>
+            <div>
+              <dt>消除狗头</dt>
+              <dd id="finalCleared">0</dd>
+            </div>
+          </dl>
+          <p class="rating" id="ratingText">狗头初入诗坛</p>
+          <p class="quote" id="resultPoem"></p>
+          <button class="primary-btn" id="restartBtn" type="button">再来一局</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
